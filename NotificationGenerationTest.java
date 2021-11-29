@@ -20,6 +20,7 @@ class NotificationGenerationTest {
 		//If the payment is for a physical product, generate a packing slip for shippin
 		if(aBook instanceof PhysicalProduct && !(null==aBook.applyPaymentAction(aPayment)))
 			assert (true);
+<<<<<<< Updated upstream
 	// 
 		//if(aBook instanceof PhysicalProduct && !PaymentSlip.getForObject().getPackagingSlip.royalrtDepartment==null)
 	
@@ -42,6 +43,8 @@ class NotificationGenerationTest {
 		
 //		if((Payment.isPhysical() || Payment.isBook ) && !Payment.getCommission == null )
 //			assert(true);
+=======
+>>>>>>> Stashed changes
 	}
 	
 	@Test
@@ -57,10 +60,18 @@ class NotificationGenerationTest {
 	}
 	@Test
 	public void scenario4() {
+<<<<<<< Updated upstream
+=======
+		//if(aPayment instanceof Membership && ((Membership) aPayment).isMemberShip())
+		
+		if(!(null==aPayment.getMembership()))
+			assert(true);
+>>>>>>> Stashed changes
 		
 	}
 	@Test
 	public void scenario5() {
+<<<<<<< Updated upstream
 		
 	}
 	@Test
@@ -70,6 +81,25 @@ class NotificationGenerationTest {
 	@Test
 	public void scenario7() {
 		
+=======
+		//f the payment is for a membership or upgrade, e-mail the owner and inform them of the activation/upgrade.
+		if(!(null==aPayment.getMembership()) || !(null== aPayment.getUpgrade() && (aPayment.getMembership().getEmailNotification().equals("Emailed notification-Membership") || aPayment.getMembership().getEmailNotification().equals("Emailed notification-Upgrade")))
+				assert(true);
+	}
+	
+	@Test
+	public void scenario6() {
+		// If the payment is for the video “Learning to Ski,” add a free “First Aid” video to the packing slip (the result of a court 
+		if(aPayment instanceof Video && aPayment.getVideoList().size>2)
+			assert(true);
+
+	}
+	@Test
+	public void scenario7() {
+		// If the payment is for a physical product or a book, generate a commission payment to the agent.
+		if((aPayment instanceof PhysicalProduct || aBook instanceof Book)  aBook.applyPaymentAction(aPayment).equals("Commission Payment to AGENT"))
+			assert(true);
+>>>>>>> Stashed changes
 	}
 
 }
